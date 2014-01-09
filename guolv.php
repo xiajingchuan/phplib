@@ -60,4 +60,3 @@ $ft = new Filter();
 $str = "元 限";
 //echo $ft->allBlankChar($str);
 echo $ft->asciiBlankChar($str);
-echo $ft;
