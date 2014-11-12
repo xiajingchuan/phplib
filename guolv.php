@@ -16,10 +16,11 @@ class Filter
 
 	/**
 	 * 过滤空格方法
+	 * 包含全角空格
 	 */
 	public function space($str)
 	{
-		return str_replace(" ", '', $str);
+		return str_replace(array(" ","　"), '', $str);
 	}
 
 	/**
@@ -46,6 +47,32 @@ class Filter
 			}
 		}
 		return $str;
+	}
+
+	/**
+	 * 过滤所有换行符
+	 */
+	public function allBr($str)
+	{
+		$patten = array("\r\n", "\n", "\r");
+		return str_replace($patten, "", $str);
+	}
+
+	/**
+	 * 过滤html标签
+	 */
+	public function html($str)
+	{
+		return strip_tags($str);
+	}
+
+	/**
+	 * 自定义过滤方法
+	 * 不支持正则
+	 */
+	public function custom($str, $p = array())
+	{
+		return str_replace($p, "", $str);
 	}
 
 	/**
