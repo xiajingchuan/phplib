@@ -20,6 +20,6 @@ abstract class LogObject {
 	/**
 	 * 日志写入抽象方法
 	 */
-	abstract protected function write();
+	abstract protected function write($str);
 
 }
